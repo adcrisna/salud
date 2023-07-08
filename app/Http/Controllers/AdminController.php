@@ -251,7 +251,7 @@ class AdminController extends Controller
     }
 
     public function laporan(Request $request) {
-        $jadwal = Jadwal::whereBetween('waktu_penjadwalan', [$request->tanggalAwal, $request->tanggalAkhir])->get();
+        $jadwal = Jadwal::whereBetween('waktu_penjadwalan', [date('Y-m-d 23:59:00', strtotime($request->tanggalAwal)), date('Y-m-d 23:59:00', strtotime($request->tanggalAkhir))])->get();
         $sekolah = User::find(Auth::user()->id);
         $pdf = Pdf::loadView('Admin.laporan', compact('jadwal','sekolah'));
         return $pdf->stream();

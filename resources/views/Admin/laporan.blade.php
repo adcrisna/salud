@@ -60,6 +60,7 @@
     table td {
         text-align: center;
         border: 1px solid black;
+        border-bottom: 1px solid black;
         border-top: 1px solid black;
         border-left: 1px solid black;
         border-right: 1px solid black;
@@ -67,6 +68,15 @@
 
     table tbody tr:last-child th {
         border: 1px solid black;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+    }
+
+    table thead tr:last-child th {
+        border: 1px solid black;
+        border-bottom: 1px solid black;
         border-top: 1px solid black;
         border-left: 1px solid black;
         border-right: 1px solid black;
@@ -74,7 +84,7 @@
 
     table tfoot th {
         padding: 5px 5px;
-        background: #FFFFFF;
+        background: black;
         border-bottom: 1px solid black;
         border-top: 1px solid black;
         border-left: 1px solid black;
@@ -88,12 +98,12 @@
         border-top: 1px solid black;
         border-left: 1px solid black;
         border-right: 1px solid black;
-
+        border-bottom: 1px solid black;
     }
 
     table tfoot tr:last-child th {
-        color: #ffffff;
-        background-color: #ffffff;
+        color: black;
+        background-color: black;
         /*font-size: 1.5em;*/
         /* border-top: 1px solid #57B223; */
 
@@ -101,6 +111,7 @@
 
     table tfoot tr th:first-child {
         border: 1px solid black;
+        border-bottom: 1px solid black;
         border-top: 1px solid black;
         border-left: 1px solid black;
         border-right: 1px solid black;
@@ -120,29 +131,32 @@
     </div>
     <hr>
     <br>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Jadwal</th>
-                <th>Sekolah</th>
-                <th>Alamat</th>
-                <th>No Telepon</th>
-                <th>Jumlah Siswa</th>
-        </thead>
-        <tbody>
-            @foreach ($jadwal as $value)
+    @if ($jadwal == '[]')
+    @else
+        <table>
+            <thead>
                 <tr>
-                    <td>{{ @$value->id }}</td>
-                    <td>{{ @$value->waktu_penjadwalan }}</td>
-                    <td>{{ @$value->Sekolah->name }}</td>
-                    <td>{{ @$value->Sekolah->alamat }}</td>
-                    <td>{{ @$value->Sekolah->telepon }}</td>
-                    <td>{{ @$value->jumlah_siswa }}</td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+                    <th>ID</th>
+                    <th>Jadwal</th>
+                    <th>Sekolah</th>
+                    <th>Alamat</th>
+                    <th>No Telepon</th>
+                    <th>Jumlah Siswa</th>
+            </thead>
+            <tbody>
+                @foreach ($jadwal as $value)
+                    <tr>
+                        <td>{{ @$value->id }}</td>
+                        <td>{{ @$value->waktu_penjadwalan }}</td>
+                        <td>{{ @$value->Sekolah->name }}</td>
+                        <td>{{ @$value->Sekolah->alamat }}</td>
+                        <td>{{ @$value->Sekolah->telepon }}</td>
+                        <td>{{ @$value->jumlah_siswa }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    @endif
     <br>
     <p style="font-size: 14px" class="ttd">
         Cirebon, {{ Date('d-M-Y') }} <br>
