@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('kepala_sekolah')->nullable();
             $table->string('nip')->nullable();
             $table->string('status')->nullable();
+            $table->text('lampiran')->nullable();
             $table->timestamps();
         });
     }
