@@ -101,7 +101,7 @@ class SekolahController extends Controller
             $pengajuan->sekolah_id = $request->id;
             $pengajuan->jumlah_siswa = $request->jumlahSiswa;
             $pengajuan->no_surat = $request->surat;
-            $pengajuan->perihal = $request->perihal;
+            $pengajuan->perihal = "Surat Pengajuan Program SALUD";
             $pengajuan->kepala_sekolah = $request->kepalaSekolah;
             $pengajuan->nip = $request->nip;
             $pengajuan->status = null;

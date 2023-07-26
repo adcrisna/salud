@@ -117,17 +117,17 @@
                         </div>
                         <div class="form-group has-feedback">
                             <label>Jumlah Siswa :</label>
-                            <input type="number" min="1" name="jumlahSiswa" class="form-control"
+                            <input type="number" min="1" max="30" name="jumlahSiswa" class="form-control"
                                 placeholder="Jumlah Siswa" required>
                         </div>
                         <div class="form-group has-feedback">
                             <label>No Surat :</label>
                             <input type="text" name="surat" class="form-control" placeholder="No Surat" required>
                         </div>
-                        <div class="form-group has-feedback">
+                        {{-- <div class="form-group has-feedback">
                             <label>Perihal :</label>
                             <textarea name="perihal" id="perihal" class="form-control" cols="10" rows="5"></textarea>
-                        </div>
+                        </div> --}}
                         <div class="form-group has-feedback">
                             <label>Kepala Sekolah :</label>
                             <input type="text" name="kepalaSekolah" class="form-control"
@@ -162,8 +162,7 @@
                     <form action="{{ route('sekolah.sendPengajuan') }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group has-feedback">
-                            <input type="hidden" name="id" readonly class="form-control" placeholder="ID"
-                                required>
+                            <input type="hidden" name="id" readonly class="form-control" placeholder="ID" required>
                         </div>
                         <div class="form-group has-feedback">
                             <label>Surat Pengajuan</label>
