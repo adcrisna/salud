@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/font-awesome/css/font-awesome.min.css') }}">
 </head>
 
-<body class="hold-transition login-page">
+<body class="hold-transition" style="background-image: url('cirtos.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
